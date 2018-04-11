@@ -8,6 +8,9 @@ public class main {
 		// TODO Auto-generated method stub
 		
 		int betrag =gridlog(args[0]);
+		int cpos=0;
+		//Error:Current
+		// Mehrere Anweisungen hintereinander zb: A1 2 4 5 55 D3 5 55 44 programm für eine Gebaut ! 
 		int[] muenzen =new int[args.length-1];
 		int offset=1;
 		for (int n = 0; n <args.length-offset; n++) {
