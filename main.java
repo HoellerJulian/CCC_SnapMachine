@@ -7,12 +7,11 @@ public class main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		int betrag =Integer.parseInt(args[1]);
-		int anzahlMuenzen =Integer.parseInt(args[2]);
-		int[] muenzen =new int[anzahlMuenzen];
-		int input = 0;
-		for (int n = 0; n <anzahlMuenzen; n++) {
-			int offset=3;
+		int betrag =gridlog(args[0]);
+		int[] muenzen =new int[args.length-1];
+		int offset=1;
+		for (int n = 0; n <args.length-offset; n++) {
+		
 			muenzen[n]= Integer.parseInt(args[offset+n]);
 			betrag-=muenzen[n];
 			
@@ -25,10 +24,27 @@ public class main {
 		else if(betrag==0) {}
 		else if(betrag>0) {System.out.println("MISSING "+betrag);}
 	}
-	static protected void gridlog() {
+	static protected int gridlog(String argsnull) {
 		int[][] grid= new int[26][26];
-		
-		
+		grid[0][0]=79;
+		grid[0][1]=99;
+		grid[0][2]=149;
+		grid[1][0]=65;
+		grid[1][1]=129;
+		grid[1][2]=199;
+		String[] preset=new String[2];
+		preset[0]=argsnull.substring(0, 1);
+		preset[1]=argsnull.substring(1);
+		switch (preset[0]) {
+		case "A":
+			return grid[Integer.parseInt(preset[1])-1][0];
+		case "B":
+			return grid[Integer.parseInt(preset[1])-1][1];
+		case "C":
+			return grid[Integer.parseInt(preset[1])-1][2];
+		default:
+			return 0;
+		}
 	}
 	
 	
