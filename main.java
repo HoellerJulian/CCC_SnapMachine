@@ -27,15 +27,22 @@ public class main {
 	}
 	
 	static protected void returncmd(int betrag) {
+		int[]num = new int[8];
+		for (int i = 0; i < num.length; i++) {
+			num[i]=0;
+		}
 		while(betrag>0) {
-		if(betrag-200>-1) {betrag-=200;System.out.print(" 200");}
-		else if(betrag-100>-1) {betrag-=100;System.out.print(" 100");}
-		else if(betrag-50>-1) {betrag-=50;System.out.print(" 50");}
-		else if(betrag-20>-1) {betrag-=20;System.out.print(" 20");}
-		else if(betrag-10>-1) {betrag-=10;System.out.print(" 10");}
-		else if(betrag-5>-1) {betrag-=5;System.out.print(" 5");}
-		else if(betrag-2>-1) {betrag-=2;System.out.print(" 2");}
-		else {betrag-=1;System.out.print(" 1");}
+		if(betrag-200>-1) {betrag-=200;num[07]+=1;}
+		else if(betrag-100>-1) {betrag-=100;num[06]+=1;}
+		else if(betrag-50>-1) {betrag-=50;num[05]+=1;}
+		else if(betrag-20>-1) {betrag-=20;num[04]+=1;}
+		else if(betrag-10>-1) {betrag-=10;num[03]+=1;}
+		else if(betrag-5>-1) {betrag-=5;num[02]+=1;}
+		else if(betrag-2>-1) {betrag-=2;num[01]+=1;}
+		else {betrag-=1;num[00]+=1;}
+		}
+		for (int i = 0; i < num.length; i++) {
+			System.out.print(" "+num[i]);
 		}
 	}
 
